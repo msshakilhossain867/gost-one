@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">বাংলা রহস্যময় ও ভূতের গল্প</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <!-- TEST ads=========================-->
+    <!-- TEST ads=========================-->
+    <string name="admob_app_id">ca-app-pub-3940256099942544~3347511713</string>
+    <string name="admob_banner_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="admob_interstitial_id">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="admob_rewarded_id">ca-app-pub-3940256099942544/5224354917</string>
+    <string name="admob_app_open_id">ca-app-pub-3940256099942544/9257395921</string>
+
+    <!-- real ads=========================-->
+    <!-- real ads=========================-->
+   <!-- <string name="admob_app_id">ca-app-pub-5488667449529842~6124441717</string>
+    <string name="admob_banner_id">ca-app-pub-5488667449529842/3021899136</string>
+    <string name="admob_interstitial_id">ca-app-pub-5488667449529842/8001751317</string>
+    <string name="admob_rewarded_id">ca-app-pub-5488667449529842/8044253386</string>
+    <string name="admob_app_open_id">ca-app-pub-5488667449529842/4259607884</string>-->
+</resources>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+
+
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Primary Brand Theme Colors (Light) -->
+    <color name="colorPrimary">#0D9488</color>
+    <color name="colorPrimaryDark">#0F766E</color>
+    <color name="colorAccent">#14B8A6</color>
+
+    <!-- Surfaces & Windows -->
+    <color name="window_background">#F1F5F9</color>
+    <color name="card_surface">#FFFFFF</color>
+    <color name="card_surface_secondary">#F8FAFC</color>
+    <color name="card_stroke">#E2E8F0</color>
+
+    <!-- Typography -->
+    <color name="text_primary">#0F172A</color>
+    <color name="text_secondary">#475569</color>
+    <color name="text_tertiary">#94A3B8</color>
+    <color name="text_on_dark">#FFFFFF</color>
+
+    <!-- Category Vibrant Accents -->
+    <color name="accent_horror">#E11D48</color>
+    <color name="accent_horror_dark">#9F1239</color>
+    <color name="accent_horror_light">#FFE4E6</color>
+
+    <color name="accent_mystery">#7C3AED</color>
+    <color name="accent_mystery_dark">#5B21B6</color>
+    <color name="accent_mystery_light">#EDE9FE</color>
+
+    <color name="accent_gold">#D97706</color>
+    <color name="accent_gold_dark">#92400E</color>
+    <color name="accent_gold_light">#FEF3C7</color>
+
+    <color name="accent_teal">#0D9488</color>
+    <color name="accent_teal_light">#CCFBF1</color>
+    <color name="accent_blue">#2563EB</color>
+
+    <!-- Reader Colors -->
+    <color name="reader_bg">#FAF7F2</color>
+    <color name="reader_text">#1E293B</color>
+    <color name="progress_tint">#0D9488</color>
+
+    <!-- Legacy compatibility mapped colors -->
+    <color name="primary_color">#FFFFFF</color>
+    <color name="re_item_color">#0F172A</color>
+    <color name="teal_700">#0F766E</color>
+    <color name="teal_200">#14B8A6</color>
+    <color name="gray">#94A3B8</color>
+    <color name="purple_500">#7C3AED</color>
+    <color name="orange_400">#F59E0B</color>
+    <color name="light_gray">#F1F5F9</color>
+    <color name="primary">#0D9488</color>
+    <color name="primary_orange">#F59E0B</color>
+    <color name="primary_purple">#7C3AED</color>
+    <color name="primary_teal">#14B8A6</color>
+</resources>

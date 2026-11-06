@@ -1,0 +1,59 @@
+plugins {
+    alias(libs.plugins.android.application)
+    id 'com.google.gms.google-services'
+}
+
+android {
+    namespace 'com.citomoltd.banglagoststory'
+    compileSdk 37
+
+    defaultConfig {
+        applicationId "com.citomoltd.banglagoststory"
+        minSdk 24
+        //noinspection EditedTargetSdkVersion
+        targetSdk 37
+        versionCode 11
+        versionName "2.1"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+
+
+    }
+
+
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+dependencies {
+
+    implementation libs.appcompat
+    implementation libs.lifecycle.process
+    implementation libs.material
+    implementation libs.activity
+    implementation libs.constraintlayout
+    testImplementation libs.junit
+    androidTestImplementation libs.ext.junit
+    androidTestImplementation libs.espresso.core
+    implementation 'com.google.android.play:app-update:2.1.0'
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    implementation 'com.readystatesoftware.sqliteasset:sqliteassethelper:2.0.1'
+    implementation 'com.google.android.gms:play-services-ads:25.5.0'
+    implementation 'com.android.volley:volley:1.2.1'
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.2.0'
+    implementation platform('com.google.firebase:firebase-bom:34.19.0')
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation("com.google.firebase:firebase-inappmessaging-display")
+    implementation 'com.google.firebase:firebase-messaging'
+}

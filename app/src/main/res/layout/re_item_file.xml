@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/card_surface"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/onclickNext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/_12sdp"
+        android:paddingTop="@dimen/_10sdp"
+        android:paddingEnd="@dimen/_12sdp"
+        android:paddingBottom="@dimen/_10sdp">
+
+        <!-- Story Thumbnail with badge overlay -->
+        <FrameLayout
+            android:layout_width="@dimen/_54sdp"
+            android:layout_height="@dimen/_54sdp">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/storyImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/img1"
+                app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Medium" />
+
+            <TextView
+                android:id="@+id/storySerialNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|start"
+                android:background="@drawable/bg_badge_mystery"
+                android:fontFamily="@font/kalpurush"
+                android:paddingStart="6dp"
+                android:paddingTop="1dp"
+                android:paddingEnd="6dp"
+                android:paddingBottom="1dp"
+                android:text="১"
+                android:textColor="@color/accent_mystery"
+                android:textSize="@dimen/_9ssp"
+                android:textStyle="bold" />
+        </FrameLayout>
+
+        <!-- Vertical text details -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_6sdp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/storyTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="@font/kalpurush"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="গল্পের নাম"
+                android:textColor="@color/text_primary"
+                android:textSize="@dimen/_14ssp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/storyText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/kalpurush"
+                android:maxLines="2"
+                android:text="গল্পের প্রথম দুই লাইন..."
+                android:textColor="@color/text_secondary"
+                android:textSize="@dimen/_11ssp" />
+
+            <TextView
+                android:id="@+id/storyMore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:fontFamily="@font/kalpurush"
+                android:text="সম্পূর্ণ পড়ুন →"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_10ssp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Favorite / Delete action button -->
+        <ImageButton
+            android:id="@+id/favoriteIcon"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Favorite"
+            android:padding="10dp"
+            android:src="@drawable/baseline_favorite_border_24"
+            app:tint="@color/accent_horror" />
+
+    </LinearLayout>
+
+    <!-- Classic List Divider -->
+    <View
+        android:id="@+id/itemDivider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:background="@drawable/divider" />
+
+</LinearLayout>

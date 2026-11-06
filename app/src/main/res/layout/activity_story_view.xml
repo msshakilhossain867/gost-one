@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/storyViewRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical"
+    tools:context=".StoryViewActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/window_background"
+        android:orientation="vertical">
+
+
+        <!-- Top Action Toolbar -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/storyToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            android:elevation="4dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:id="@+id/back_arrow"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Back"
+                    android:padding="8dp"
+                    android:src="@drawable/baseline_arrow_back_24"
+                    app:tint="@color/white" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="6dp"
+                    android:layout_toStartOf="@id/actionButtonsGroup"
+                    android:layout_toEndOf="@id/back_arrow"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/stToolbar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/kalpurush"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="গল্পের নাম"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_14ssp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvReadingTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/kalpurush"
+                        android:text="⏱️ ৩ মিনিট পড়া"
+                        android:textColor="#CCFFFFFF"
+                        android:textSize="@dimen/_9ssp" />
+                </LinearLayout>
+
+                <!-- Actions: TTS, Theme, Share, Bookmark -->
+                <LinearLayout
+                    android:id="@+id/actionButtonsGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="4dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <!-- Text-to-Speech Listen Button -->
+                    <ImageView
+                        android:id="@+id/btnTts"
+                        android:layout_width="@dimen/_34sdp"
+                        android:layout_height="@dimen/_34sdp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:contentDescription="Audio Speech"
+                        android:padding="6dp"
+                        android:src="@drawable/ic_volume_up_24"
+                        app:tint="@color/white" />
+
+                    <!-- Reading Canvas Theme Palette -->
+                    <ImageView
+                        android:id="@+id/btnReadingTheme"
+                        android:layout_width="@dimen/_34sdp"
+                        android:layout_height="@dimen/_34sdp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:contentDescription="Reading Theme"
+                        android:padding="6dp"
+                        android:src="@drawable/ic_reading_palette"
+                        app:tint="@color/white" />
+
+                    <!-- Share Quote / Story Button -->
+                    <ImageView
+                        android:id="@+id/btnShare"
+                        android:layout_width="@dimen/_34sdp"
+                        android:layout_height="@dimen/_34sdp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:contentDescription="Share Story"
+                        android:padding="6dp"
+                        android:src="@drawable/baseline_share_24"
+                        app:tint="@color/white" />
+
+                    <!-- Bookmark Button -->
+                    <LinearLayout
+                        android:id="@+id/ln_bookmark"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:padding="2dp">
+
+                        <ImageView
+                            android:id="@+id/bookmark"
+                            android:layout_width="@dimen/_34sdp"
+                            android:layout_height="@dimen/_34sdp"
+                            android:contentDescription="Bookmark"
+                            android:padding="4dp"
+                            android:src="@drawable/baseline_bookmark_border_24"
+                            app:tint="@color/white" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+        <!-- Reading Progress Indicator -->
+        <ProgressBar
+            android:id="@+id/progressBarReading"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:layout_below="@id/storyToolbar"
+            android:max="100"
+            android:progress="0"
+            android:progressTint="@color/colorPrimary" />
+
+        <!-- Story Content RecyclerView -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/adContainer"
+            android:layout_below="@id/progressBarReading"
+            android:clipToPadding="false"
+            android:paddingStart="@dimen/_10sdp"
+            android:paddingTop="@dimen/_8sdp"
+            android:paddingEnd="@dimen/_10sdp"
+            android:paddingBottom="@dimen/_55sdp"
+            android:scrollbars="vertical" />
+
+        <!-- Floating Zoom Controls -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/zoomControls"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/adContainer"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:visibility="gone"
+            app:cardBackgroundColor="@color/card_surface"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="6dp"
+            app:strokeColor="@color/card_stroke"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="8dp"
+                android:paddingTop="4dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="4dp">
+
+                <ImageButton
+                    android:id="@+id/zoomOutButton"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Zoom Out"
+                    android:padding="8dp"
+                    android:src="@drawable/baseline_zoom_out_24"
+                    app:tint="@color/text_primary" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="22dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:background="@color/card_stroke" />
+
+                <ImageButton
+                    android:id="@+id/zoomInButton"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Zoom In"
+                    android:padding="8dp"
+                    android:src="@drawable/baseline_zoom_in_24"
+                    app:tint="@color/text_primary" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Ad Container -->
+        <FrameLayout
+            android:id="@+id/adContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/window_background"
+            android:visibility="visible" />
+
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>

@@ -1,0 +1,729 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/window_background"
+    android:fillViewport="true"
+    android:scrollbars="none"
+    tools:context=".fragments.HomeFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/_12sdp"
+        android:paddingTop="@dimen/_8sdp"
+        android:paddingEnd="@dimen/_12sdp"
+        android:paddingBottom="@dimen/_65sdp">
+
+        <!-- 1. Hero Atmospheric Banner -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardHeroBanner"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_135sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            app:cardCornerRadius="@dimen/_16sdp"
+            app:cardElevation="4dp"
+            app:strokeColor="@color/card_stroke"
+            app:strokeWidth="1dp">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!-- Hero Image -->
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="Hero Banner"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/img_hero_horror" />
+
+                <!-- Dark Gradient Overlay for readability -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_hero_overlay" />
+
+                <!-- Hero Content -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="bottom"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_12sdp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_badge_horror"
+                        android:fontFamily="@font/kalpurush"
+                        android:paddingStart="8dp"
+                        android:paddingTop="2dp"
+                        android:paddingEnd="8dp"
+                        android:paddingBottom="2dp"
+                        android:text="🔥 অন্ধকার রাতের ভৌতিক রোমাঞ্চ"
+                        android:textColor="#FF6B8B"
+                        android:textSize="@dimen/_10ssp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/kalpurush"
+                        android:text="রহস্যময় ভৌতিক দুনিয়ায় স্বাগতম"
+                        android:textColor="#FFFFFF"
+                        android:textSize="@dimen/_16ssp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:id="@+id/btnHeroExplore"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:background="@drawable/bg_badge_gold"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingStart="10dp"
+                        android:paddingTop="4dp"
+                        android:paddingEnd="10dp"
+                        android:paddingBottom="4dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/kalpurush"
+                            android:text="গল্প পড়ুন"
+                            android:textColor="@color/accent_gold"
+                            android:textSize="@dimen/_11ssp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:layout_width="14dp"
+                            android:layout_height="14dp"
+                            android:layout_marginStart="4dp"
+                            android:src="@drawable/ic_arrow_forward"
+                            app:tint="@color/accent_gold" />
+                    </LinearLayout>
+                </LinearLayout>
+            </FrameLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- 2. Wallet & Reward Card (Rich Gradient) -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_10sdp"
+            app:cardCornerRadius="@dimen/_16sdp"
+            app:cardElevation="3dp"
+            app:strokeColor="@color/accent_teal"
+            app:strokeWidth="1.5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_gradient_wallet"
+                android:orientation="vertical"
+                android:padding="@dimen/_12sdp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imgCoin"
+                            android:layout_width="@dimen/_34sdp"
+                            android:layout_height="@dimen/_34sdp"
+                            android:contentDescription="Coins"
+                            android:src="@drawable/coin" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/coinBalance"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/kalpurush"
+                                android:text="Coins: 100"
+                                android:textColor="#FBBF24"
+                                android:textSize="@dimen/_16ssp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/kalpurush"
+                                android:text="আপনার জমানো ফ্রি কয়েন"
+                                android:textColor="#CCFBF1"
+                                android:textSize="@dimen/_10ssp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- Daily Bonus Button -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnDailyBonus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:backgroundTint="#FEF3C7"
+                        android:fontFamily="@font/kalpurush"
+                        android:minHeight="38dp"
+                        android:text="🎁 দৈনিক বোনাস"
+                        android:textColor="#B45309"
+                        android:textSize="@dimen/_10ssp"
+                        android:textStyle="bold"
+                        app:cornerRadius="14dp"
+                        app:strokeColor="#F59E0B"
+                        app:strokeWidth="1dp" />
+                </RelativeLayout>
+
+                <!-- Ad Reward Sub-bar -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:background="#20FFFFFF"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/_8sdp"
+                    android:paddingTop="@dimen/_6sdp"
+                    android:paddingEnd="@dimen/_8sdp"
+                    android:paddingBottom="@dimen/_6sdp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/watchedAdsText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/kalpurush"
+                            android:text="বিজ্ঞাপন দেখে কয়েন নিন"
+                            android:textColor="#FFFFFF"
+                            android:textSize="@dimen/_11ssp" />
+
+                        <TextView
+                            android:id="@+id/remainingTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/kalpurush"
+                            android:textColor="#FDE047"
+                            android:textSize="@dimen/_9ssp"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/watchAdButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="#F59E0B"
+                        android:fontFamily="@font/kalpurush"
+                        android:minHeight="36dp"
+                        android:text="🎬 +১০ কয়েন"
+                        android:textColor="#000000"
+                        android:textSize="@dimen/_10ssp"
+                        android:textStyle="bold"
+                        app:cornerRadius="12dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- 3. Continue Reading Card (Dynamic) -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardContinueReading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:visibility="gone"
+            app:cardBackgroundColor="@color/card_surface"
+            app:cardCornerRadius="@dimen/_14sdp"
+            app:cardElevation="2dp"
+            app:strokeColor="@color/colorPrimary"
+            app:strokeWidth="1.5dp">
+
+            <LinearLayout
+                android:id="@+id/btnContinueReading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/_10sdp">
+
+                <ImageView
+                    android:layout_width="@dimen/_32sdp"
+                    android:layout_height="@dimen/_32sdp"
+                    android:background="@drawable/bg_badge_horror"
+                    android:padding="6dp"
+                    android:src="@drawable/baseline_auto_stories_24"
+                    app:tint="@color/accent_horror" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/kalpurush"
+                        android:text="📖 পড়া চালিয়ে যান"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/_10ssp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvLastReadTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/kalpurush"
+                        android:maxLines="1"
+                        android:text="সর্বশেষ পড়া গল্প"
+                        android:textColor="@color/text_primary"
+                        android:textSize="@dimen/_13ssp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@drawable/ic_arrow_forward"
+                    app:tint="@color/colorPrimary" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- 3.1 Reader Hunter Stats Banner -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardReaderStats"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_10sdp"
+            app:cardBackgroundColor="@color/card_surface"
+            app:cardCornerRadius="@dimen/_14sdp"
+            app:cardElevation="2dp"
+            app:strokeColor="@color/card_stroke"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/_10sdp">
+
+                <!-- Rank & Level -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.3"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvRankTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/kalpurush"
+                        android:maxLines="1"
+                        android:text="👻 শিক্ষানবিস পাঠক"
+                        android:textColor="@color/accent_gold"
+                        android:textSize="@dimen/_11ssp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/kalpurush"
+                        android:text="আপনার পাঠক পদবী"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="@dimen/_9ssp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@color/card_stroke" />
+
+                <!-- Read Time -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvTotalReadTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/kalpurush"
+                        android:text="০ মিনিট"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/_12ssp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/kalpurush"
+                        android:text="মোট পড়া"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="@dimen/_9ssp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@color/card_stroke" />
+
+                <!-- Daily Streak -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvStreakDays"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/kalpurush"
+                        android:text="🔥 ১ দিন"
+                        android:textColor="@color/accent_horror"
+                        android:textSize="@dimen/_12ssp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/kalpurush"
+                        android:text="স্ট্রিক"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="@dimen/_9ssp" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Categories Header -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:fontFamily="@font/kalpurush"
+            android:text="গল্পের বিভাগসমূহ"
+            android:textColor="@color/text_primary"
+            android:textSize="@dimen/_15ssp"
+            android:textStyle="bold" />
+
+        <!-- 4. Two Vibrant Category Cards -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
+
+            <!-- Category 1: Horror (Rich Crimson Gradient Card) -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_weight="1"
+                app:cardCornerRadius="@dimen/_16sdp"
+                app:cardElevation="3dp"
+                app:strokeColor="#FF4D6D"
+                app:strokeWidth="1.5dp">
+
+                <LinearLayout
+                    android:id="@+id/ln_vtStory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_gradient_horror_card"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_12sdp">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:layout_width="@dimen/_56sdp"
+                        android:layout_height="@dimen/_56sdp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/img_cat_horror"
+                        app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full"
+                        app:strokeColor="#FF6B8B"
+                        app:strokeWidth="2dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:fontFamily="@font/kalpurush"
+                        android:text="ভৌতিক গল্প"
+                        android:textColor="#FFFFFF"
+                        android:textSize="@dimen/_15ssp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:background="#44FFFFFF"
+                        android:fontFamily="@font/kalpurush"
+                        android:paddingStart="8dp"
+                        android:paddingTop="2dp"
+                        android:paddingEnd="8dp"
+                        android:paddingBottom="2dp"
+                        android:text="৫৫+ ভয়ংকর গল্প"
+                        android:textColor="#FFE4E6"
+                        android:textSize="@dimen/_10ssp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/kalpurush"
+                            android:text="পড়ুন"
+                            android:textColor="#FFFFFF"
+                            android:textSize="@dimen/_12ssp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_marginStart="4dp"
+                            android:src="@drawable/ic_arrow_forward"
+                            app:tint="#FFFFFF" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Category 2: Mystery (Rich Mystic Violet Gradient Card) -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_weight="1"
+                app:cardCornerRadius="@dimen/_16sdp"
+                app:cardElevation="3dp"
+                app:strokeColor="#A78BFA"
+                app:strokeWidth="1.5dp">
+
+                <LinearLayout
+                    android:id="@+id/ln_rsStory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_gradient_mystery_card"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_12sdp">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:layout_width="@dimen/_56sdp"
+                        android:layout_height="@dimen/_56sdp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/img_cat_mystery"
+                        app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full"
+                        app:strokeColor="#C4B5FD"
+                        app:strokeWidth="2dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:fontFamily="@font/kalpurush"
+                        android:text="রহস্য কাহিনী"
+                        android:textColor="#FFFFFF"
+                        android:textSize="@dimen/_15ssp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:background="#44FFFFFF"
+                        android:fontFamily="@font/kalpurush"
+                        android:paddingStart="8dp"
+                        android:paddingTop="2dp"
+                        android:paddingEnd="8dp"
+                        android:paddingBottom="2dp"
+                        android:text="৩৩+ রোমাঞ্চকর গল্প"
+                        android:textColor="#EDE9FE"
+                        android:textSize="@dimen/_10ssp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/kalpurush"
+                            android:text="পড়ুন"
+                            android:textColor="#FFFFFF"
+                            android:textSize="@dimen/_12ssp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_marginStart="4dp"
+                            android:src="@drawable/ic_arrow_forward"
+                            app:tint="#FFFFFF" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+
+        <!-- 5. Prime VIP Story Card (Warm Sunset Gold Gradient) -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_10sdp"
+            app:cardCornerRadius="@dimen/_16sdp"
+            app:cardElevation="3dp"
+            app:strokeColor="#FBBF24"
+            app:strokeWidth="1.5dp">
+
+            <RelativeLayout
+                android:id="@+id/rl_pmStory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_gradient_prime_card"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:padding="@dimen/_12sdp">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/imgPrime"
+                    android:layout_width="@dimen/_58sdp"
+                    android:layout_height="@dimen/_58sdp"
+                    android:layout_centerVertical="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/img_cat_prime"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Medium"
+                    app:strokeColor="#FDE047"
+                    app:strokeWidth="1.5dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_toEndOf="@id/imgPrime"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/kalpurush"
+                            android:text="স্পেশাল প্রাইম গল্প"
+                            android:textColor="#FFFFFF"
+                            android:textSize="@dimen/_15ssp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:background="#FEF3C7"
+                            android:fontFamily="@font/kalpurush"
+                            android:paddingStart="6dp"
+                            android:paddingTop="1dp"
+                            android:paddingEnd="6dp"
+                            android:paddingBottom="1dp"
+                            android:text="Prime"
+                            android:textColor="#92400E"
+                            android:textSize="@dimen/_9ssp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:fontFamily="@font/kalpurush"
+                        android:text="এক্সক্লুসিভ ভৌতিক ও রহস্য গল্প কয়েন দিয়ে আনলক করুন"
+                        android:textColor="#FEF3C7"
+                        android:textSize="@dimen/_10ssp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_6sdp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/kalpurush"
+                            android:text="আনলক ও পড়ুন"
+                            android:textColor="#FDE047"
+                            android:textSize="@dimen/_11ssp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_marginStart="4dp"
+                            android:src="@drawable/ic_arrow_forward"
+                            app:tint="#FDE047" />
+                    </LinearLayout>
+                </LinearLayout>
+            </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
